@@ -1,0 +1,30 @@
+#include<bits/stdc++.h>
+#define fo(i,s,n) for(int i=s;i<n;i++)
+#define ffo(i,s,n) for(int i=s;i<=n;i++)
+#define ll long long int 
+using namespace std;
+
+int main() {
+    int t;cin>>t;
+    while(t--)
+    {
+        string s;cin>>s;
+        int n=s.size();
+        set<char>s1;
+        int ans=0;
+        for(int i=0;i<n;i++)
+        {
+            s1.insert(s[i]);
+            if(s1.size()>3)
+            {
+                ans++;
+                s1.clear();
+                s1.insert(s[i]);
+            }
+
+        }
+        if(!s1.empty())ans++;
+        cout<<ans<<endl;     
+    }
+    return 0;
+}
